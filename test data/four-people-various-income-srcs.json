@@ -1,0 +1,487 @@
+{
+  "students": [
+    {
+      "id": "OawOA6PXj",
+      "isChild": true,
+      "incomeTypes": {
+        "child": {
+          "isApplicable": true,
+          "sources": {
+            "job": {
+              "has": true,
+              "lineItems": [
+                {
+                  "amount": "100",
+                  "frequency": "everyTwoWeeks",
+                  "hourlyHours": "",
+                  "hourlyPeriod": "",
+                  "id": "BYXdiOsnR"
+                }
+              ]
+            },
+            "socialSecurity": {
+              "has": true,
+              "lineItems": [
+                {
+                  "amount": "150",
+                  "frequency": "monthly",
+                  "hourlyHours": "",
+                  "hourlyPeriod": "",
+                  "id": "7lgP-colZ"
+                }
+              ]
+            },
+            "friendsFamily": {
+              "has": false,
+              "lineItems": []
+            },
+            "pensionAnnuityTrust": {
+              "has": false,
+              "lineItems": []
+            },
+            "other": {
+              "has": false,
+              "lineItems": []
+            }
+          }
+        }
+      },
+      "isStudent": true,
+      "isFoster": false,
+      "isHomeless": false,
+      "isMigrant": false,
+      "isRunaway": false,
+      "demographics": {
+        "isNativeAmerican": null,
+        "isAsian": null,
+        "isBlack": null,
+        "isPacificIslander": null,
+        "isWhite": true,
+        "isHispanicLatino": false
+      },
+      "firstName": "Sig",
+      "middleName": "",
+      "lastName": "Hansen",
+      "suffix": "",
+      "school": "School",
+      "grade": "11"
+    }
+  ],
+  "assistancePrograms": {
+    "items": [
+      {
+        "isApplicable": null,
+        "id": "7NDtCS_-gZ",
+        "name": "Supplemental Nutrition Assistance Program (SNAP)",
+        "accronym": "SNAP",
+        "caseNumber": ""
+      },
+      {
+        "isApplicable": null,
+        "id": "Hj119gotVT",
+        "name": "Temporary Assistance for Needy Families (TANF)",
+        "accronym": "TANF",
+        "caseNumber": ""
+      },
+      {
+        "isApplicable": null,
+        "id": "epN_ulIFXY",
+        "name": "Food Distribution Program on Indian Reservations (FDPIR)",
+        "accronym": "FDPIR",
+        "caseNumber": ""
+      }
+    ]
+  },
+  "otherChildren": [
+    {
+      "id": "ozz-RX2HI",
+      "isChild": true,
+      "incomeTypes": {
+        "child": {
+          "isApplicable": false,
+          "sources": {
+            "job": {
+              "has": null,
+              "lineItems": []
+            },
+            "socialSecurity": {
+              "has": null,
+              "lineItems": []
+            },
+            "friendsFamily": {
+              "has": null,
+              "lineItems": []
+            },
+            "pensionAnnuityTrust": {
+              "has": null,
+              "lineItems": []
+            },
+            "other": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        }
+      },
+      "firstName": "Richard",
+      "middleName": "",
+      "lastName": "Hansen",
+      "suffix": "",
+      "isFoster": ""
+    }
+  ],
+  "adults": [
+    {
+      "id": "KW6JXNBbJL",
+      "isAdult": true,
+      "isAttestor": true,
+      "incomeTypes": {
+        "military": {
+          "isApplicable": true,
+          "isDeployed": true,
+          "sources": {
+            "basic": {
+              "has": true,
+              "lineItems": [
+                {
+                  "amount": "3000",
+                  "frequency": "monthly",
+                  "hourlyHours": "",
+                  "hourlyPeriod": "",
+                  "id": "jmuWch7ex"
+                }
+              ]
+            },
+            "cashBonus": {
+              "has": true,
+              "lineItems": [
+                {
+                  "amount": "200",
+                  "frequency": "monthly",
+                  "hourlyHours": "",
+                  "hourlyPeriod": "",
+                  "id": "rfmSDgUK6"
+                }
+              ]
+            },
+            "allowance": {
+              "has": true,
+              "lineItems": [
+                {
+                  "amount": "700",
+                  "frequency": "monthly",
+                  "hourlyHours": "",
+                  "hourlyPeriod": "",
+                  "id": "dRFVPimHL"
+                }
+              ]
+            }
+          }
+        },
+        "employment": {
+          "isApplicable": false,
+          "sources": {
+            "salaryWages": {
+              "has": null,
+              "lineItems": []
+            },
+            "tips": {
+              "has": null,
+              "lineItems": []
+            },
+            "commission": {
+              "has": null,
+              "lineItems": []
+            },
+            "cashBonus": {
+              "has": null,
+              "lineItems": []
+            },
+            "selfEmployment": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "publicAssistance": {
+          "isApplicable": false,
+          "sources": {
+            "ssi": {
+              "has": null,
+              "lineItems": []
+            },
+            "stateLocal": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "spousal": {
+          "isApplicable": false,
+          "sources": {
+            "alimony": {
+              "has": null,
+              "lineItems": []
+            },
+            "childSupport": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "unemployment": {
+          "isApplicable": false,
+          "sources": {
+            "unemployment": {
+              "has": null,
+              "lineItems": []
+            },
+            "workersComp": {
+              "has": null,
+              "lineItems": []
+            },
+            "strike": {
+              "has": null,
+              "lineItems": []
+            },
+            "ssdi": {
+              "has": null,
+              "lineItems": []
+            },
+            "veteran": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "retirement": {
+          "isApplicable": false,
+          "sources": {
+            "socialSecurity": {
+              "has": null,
+              "lineItems": []
+            },
+            "privatePension": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "other": {
+          "isApplicable": false,
+          "sources": {
+            "regularCashPayments": {
+              "has": null,
+              "lineItems": []
+            },
+            "rentalIncome": {
+              "has": null,
+              "lineItems": []
+            },
+            "earnedInterest": {
+              "has": null,
+              "lineItems": []
+            },
+            "investmentIncome": {
+              "has": null,
+              "lineItems": []
+            },
+            "annuity": {
+              "has": null,
+              "lineItems": []
+            },
+            "other": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        }
+      },
+      "firstName": "John",
+      "middleName": "D",
+      "lastName": "Doe",
+      "suffix": ""
+    },
+    {
+      "id": "Z8z6Kyjnj",
+      "isAdult": true,
+      "isAttestor": false,
+      "incomeTypes": {
+        "military": {
+          "isApplicable": false,
+          "isDeployed": null,
+          "sources": {
+            "basic": {
+              "has": null,
+              "lineItems": []
+            },
+            "cashBonus": {
+              "has": null,
+              "lineItems": []
+            },
+            "allowance": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "employment": {
+          "isApplicable": true,
+          "sources": {
+            "salaryWages": {
+              "has": true,
+              "lineItems": [
+                {
+                  "amount": "200",
+                  "frequency": "weekly",
+                  "hourlyHours": "",
+                  "hourlyPeriod": "",
+                  "id": "XSvwapr_A"
+                }
+              ]
+            },
+            "tips": {
+              "has": false,
+              "lineItems": []
+            },
+            "commission": {
+              "has": false,
+              "lineItems": []
+            },
+            "cashBonus": {
+              "has": false,
+              "lineItems": []
+            },
+            "selfEmployment": {
+              "has": false,
+              "lineItems": []
+            }
+          }
+        },
+        "publicAssistance": {
+          "isApplicable": false,
+          "sources": {
+            "ssi": {
+              "has": null,
+              "lineItems": []
+            },
+            "stateLocal": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "spousal": {
+          "isApplicable": false,
+          "sources": {
+            "alimony": {
+              "has": null,
+              "lineItems": []
+            },
+            "childSupport": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "unemployment": {
+          "isApplicable": false,
+          "sources": {
+            "unemployment": {
+              "has": null,
+              "lineItems": []
+            },
+            "workersComp": {
+              "has": null,
+              "lineItems": []
+            },
+            "strike": {
+              "has": null,
+              "lineItems": []
+            },
+            "ssdi": {
+              "has": null,
+              "lineItems": []
+            },
+            "veteran": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "retirement": {
+          "isApplicable": false,
+          "sources": {
+            "socialSecurity": {
+              "has": null,
+              "lineItems": []
+            },
+            "privatePension": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "other": {
+          "isApplicable": true,
+          "sources": {
+            "regularCashPayments": {
+              "has": false,
+              "lineItems": []
+            },
+            "rentalIncome": {
+              "has": false,
+              "lineItems": []
+            },
+            "earnedInterest": {
+              "has": true,
+              "lineItems": [
+                {
+                  "amount": "10",
+                  "frequency": "monthly",
+                  "hourlyHours": "",
+                  "hourlyPeriod": "",
+                  "id": "UKLMDGyam"
+                }
+              ]
+            },
+            "investmentIncome": {
+              "has": false,
+              "lineItems": []
+            },
+            "annuity": {
+              "has": false,
+              "lineItems": []
+            },
+            "other": {
+              "has": false,
+              "lineItems": []
+            }
+          }
+        }
+      },
+      "firstName": "Jill",
+      "middleName": "",
+      "lastName": "Hansen",
+      "suffix": ""
+    }
+  ],
+  "certifiedCorrect": true,
+  "electToProvideIncome": null,
+  "attestation": {
+    "date": "08/26/2020"
+  },
+  "contact": {
+    "phone": "(603)1231234",
+    "email": "e@mail.com",
+    "address1": "234 Main Street",
+    "address2": "",
+    "city": "Hampton",
+    "state": "NH",
+    "zip": "12345"
+  },
+  "signature": {
+    "noSsn": null,
+    "ssnLastFour": "1234"
+  }
+}

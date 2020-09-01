@@ -1,0 +1,247 @@
+{
+  "students": [
+    {
+      "id": "8ingrWCXN",
+      "isChild": true,
+      "incomeTypes": {
+        "child": {
+          "isApplicable": null,
+          "sources": {
+            "job": {
+              "has": null,
+              "lineItems": []
+            },
+            "socialSecurity": {
+              "has": null,
+              "lineItems": []
+            },
+            "friendsFamily": {
+              "has": null,
+              "lineItems": []
+            },
+            "pensionAnnuityTrust": {
+              "has": null,
+              "lineItems": []
+            },
+            "other": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        }
+      },
+      "isStudent": true,
+      "isFoster": null,
+      "isHomeless": null,
+      "isMigrant": null,
+      "isRunaway": null,
+      "demographics": {
+        "isNativeAmerican": true,
+        "isAsian": true,
+        "isBlack": true,
+        "isPacificIslander": true,
+        "isWhite": true,
+        "isHispanicLatino": false
+      },
+      "firstName": "Jill",
+      "middleName": "J",
+      "lastName": "Doe",
+      "suffix": "",
+      "school": "School",
+      "grade": "12"
+    }
+  ],
+  "assistancePrograms": {
+    "items": [
+      {
+        "isApplicable": true,
+        "id": "nqwmFLNGp-",
+        "name": "Supplemental Nutrition Assistance Program (SNAP)",
+        "accronym": "SNAP",
+        "caseNumber": "1123"
+      },
+      {
+        "isApplicable": null,
+        "id": "hoQnT9z6dA",
+        "name": "Temporary Assistance for Needy Families (TANF)",
+        "accronym": "TANF",
+        "caseNumber": ""
+      },
+      {
+        "isApplicable": null,
+        "id": "7YuYZQOgNz",
+        "name": "Food Distribution Program on Indian Reservations (FDPIR)",
+        "accronym": "FDPIR",
+        "caseNumber": ""
+      }
+    ]
+  },
+  "otherChildren": [],
+  "adults": [
+    {
+      "id": "o-0HSGLDwr",
+      "isAdult": true,
+      "isAttestor": true,
+      "incomeTypes": {
+        "military": {
+          "isApplicable": null,
+          "isDeployed": null,
+          "sources": {
+            "basic": {
+              "has": null,
+              "lineItems": []
+            },
+            "cashBonus": {
+              "has": null,
+              "lineItems": []
+            },
+            "allowance": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "employment": {
+          "isApplicable": null,
+          "sources": {
+            "salaryWages": {
+              "has": null,
+              "lineItems": []
+            },
+            "tips": {
+              "has": null,
+              "lineItems": []
+            },
+            "commission": {
+              "has": null,
+              "lineItems": []
+            },
+            "cashBonus": {
+              "has": null,
+              "lineItems": []
+            },
+            "selfEmployment": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "publicAssistance": {
+          "isApplicable": null,
+          "sources": {
+            "ssi": {
+              "has": null,
+              "lineItems": []
+            },
+            "stateLocal": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "spousal": {
+          "isApplicable": null,
+          "sources": {
+            "alimony": {
+              "has": null,
+              "lineItems": []
+            },
+            "childSupport": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "unemployment": {
+          "isApplicable": null,
+          "sources": {
+            "unemployment": {
+              "has": null,
+              "lineItems": []
+            },
+            "workersComp": {
+              "has": null,
+              "lineItems": []
+            },
+            "strike": {
+              "has": null,
+              "lineItems": []
+            },
+            "ssdi": {
+              "has": null,
+              "lineItems": []
+            },
+            "veteran": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "retirement": {
+          "isApplicable": null,
+          "sources": {
+            "socialSecurity": {
+              "has": null,
+              "lineItems": []
+            },
+            "privatePension": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        },
+        "other": {
+          "isApplicable": null,
+          "sources": {
+            "regularCashPayments": {
+              "has": null,
+              "lineItems": []
+            },
+            "rentalIncome": {
+              "has": null,
+              "lineItems": []
+            },
+            "earnedInterest": {
+              "has": null,
+              "lineItems": []
+            },
+            "investmentIncome": {
+              "has": null,
+              "lineItems": []
+            },
+            "annuity": {
+              "has": null,
+              "lineItems": []
+            },
+            "other": {
+              "has": null,
+              "lineItems": []
+            }
+          }
+        }
+      },
+      "firstName": "Jon",
+      "middleName": "J",
+      "lastName": "Doe",
+      "suffix": "Jr"
+    }
+  ],
+  "certifiedCorrect": true,
+  "electToProvideIncome": null,
+  "attestation": {
+    "date": "08/26/2020"
+  },
+  "contact": {
+    "phone": "(603)1111111",
+    "email": "jjd@doe.com",
+    "address1": "123 Main Street",
+    "address2": "apt d",
+    "city": "Anytown",
+    "state": "NH",
+    "zip": "12345"
+  },
+  "signature": {
+    "noSsn": null,
+    "ssnLastFour": ""
+  }
+}
