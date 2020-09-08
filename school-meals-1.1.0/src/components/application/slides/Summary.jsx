@@ -19,6 +19,12 @@ class Summary extends Component {
   constructor(props) {
     super(props)
     this.assistanceProgramAccronym = this.assistanceProgramAccronym.bind(this)
+    this.handleCertChange = this.handleCertChange.bind(this)
+  }
+
+  handleCertChange(fieldName, value, object) {
+    object[fieldName] = value
+    this.props.onTyShouldUpdateChange(value)
   }
 
   get isValid() {
@@ -195,7 +201,7 @@ class Summary extends Component {
         }
 
         <Checkboxes legend="Certification">
-          <Checkbox name="certifiedCorrect" object={applicationData}>
+          <Checkbox name="certifiedCorrect" object={applicationData} onChange={this.handleCertChange}>
             { applicationData.showHousehold ? // eslint-disable-line no-nested-ternary
               <strong>
                 <FormattedMessage

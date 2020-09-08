@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+#config file...
+school-meals-1.1.0/src/config.js
