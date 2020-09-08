@@ -16,18 +16,13 @@ import ThankYou from './slides/ThankYou'
 @observer
 class Application extends Component {
 
-  constructor(props) {
-    super(props)
-    this.handleTyShouldUpdateChange = this.handleTyShouldUpdateChange(this)
-  }
-
   state = {
-    tyShouldUpdate: false
+    dataSentSuccessfully: false
   }
 
-  handleTyShouldUpdateChange(shouldUpdate) {
+  dataSent = success => {
     this.setState({
-      tyShouldUpdate: { shouldUpdate }
+      dataSentSuccessfully: { success }
     })
   }
 
@@ -56,8 +51,8 @@ class Application extends Component {
         <Contact contact={contact} />
         <Demographics students={students} />
         <LegalStatements />
-        <Summary applicationData={this.props.applicationData} onTyShouldUpdateChange={this.handleTyShouldUpdateChange} />
-        <ThankYou applicationData={this.props.applicationData} tyShouldUpdate={this.state.tyShouldUpdate} />
+        <Summary applicationData={this.props.applicationData} dataSent={this.dataSent} />
+        <ThankYou applicationData={this.props.applicationData} dataSentSuccessfully={this.state.dataSentSuccessfully} />
       </div>
     )
   }

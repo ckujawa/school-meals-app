@@ -10,31 +10,6 @@ class ThankYou extends Component {
   constructor(props) {
     super(props)
     this.downloadData = this.downloadData.bind(this)
-    this.state = { dataSentSuccessfully: false }
-  }
-
-  componentDidMount() {
-    const { applicationData } = this.props;
-      if (applicationData.certifiedCorrect) {
-      const stringData = JSON.stringify(applicationData.cleaned)
-      const apiUrl = 'http://localhost:3005/submit'
-
-      const options = {
-        method: 'POST',
-        body: stringData,
-        headers: { 'Content-Type': 'application/json' }
-      }
-
-      fetch(apiUrl, options).then(() => {
-        this.setState({ dataSentSuccessfully: true })
-      }).catch(() => {
-        this.setState({ dataSentSuccessfully: false })
-      })
-    }
-  }
-
-  componentShouldUpdate() {
-    return this.props.tyShouldUpdate
   }
 
   downloadData() {
@@ -80,7 +55,7 @@ class ThankYou extends Component {
             showBack={false} nextText={nextText} handleNext={this.downloadData}
             beginsSection
           >
-              {this.state.dataSentSuccessfully ? <Alert heading={alertHeading} type="success">
+              {this.props.dataSentSuccessfully ? <Alert heading={alertHeading} type="success">
                 <FormattedMessage
                   id="app.slides.thankYou.nextSteps"
                   description="Indication of what happens next."
@@ -92,7 +67,7 @@ class ThankYou extends Component {
                     <FormattedMessage
                       id="app.slides.thankYou.caution"
                       description="Warning message"
-                      defaultMessage="NO DATA HAS BEEN SAVED. An error has occured while trying to send the data. Please contact us for furether assistance."
+                      defaultMessage="NO DATA HAS BEEN SAVED. An error has occured while trying to send the data. Please contact us for further assistance."
                     />
                   </strong>
               </Alert>

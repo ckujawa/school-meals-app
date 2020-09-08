@@ -16,15 +16,32 @@ import { FormattedMessage } from 'react-intl'
 
 @observer
 class Summary extends Component {
-  constructor(props) {
-    super(props)
+  constructor(props, context) {
+    super(props, context)
     this.assistanceProgramAccronym = this.assistanceProgramAccronym.bind(this)
-    this.handleCertChange = this.handleCertChange.bind(this)
+    this.sendDataAndNext = this.sendDataAndNext.bind(this)
   }
 
-  handleCertChange(fieldName, value, object) {
-    object[fieldName] = value
-    this.props.onTyShouldUpdateChange(value)
+  sendDataAndNext() {
+    const { applicationData } = this.props;
+    if (applicationData.certifiedCorrect) {
+      const stringData = JSON.stringify(applicationData.cleaned)
+      const apiUrl = 'http://localhost:3005/submit'
+
+      const options = {
+        method: 'POST',
+        body: stringData,
+        headers: { 'Content-Type': 'application/json' }
+      }
+
+      fetch(apiUrl, options).then(() => {
+        this.props.dataSent(true)
+        this.context.navigationData.next()
+      }).catch(() => {
+        this.props.dataSent(false)
+        this.context.navigationData.next()
+      })
+    }
   }
 
   get isValid() {
@@ -61,6 +78,7 @@ class Summary extends Component {
           header={headerText}
           nextText={nextText}
           nextDisabled={!this.isValid}
+          handleNext={this.sendDataAndNext}
           id="summary"
       >
         <p className="usa-font-lead">
@@ -257,6 +275,13 @@ class Summary extends Component {
       </Slide>
     )
   }
+}
+
+Summary.contextTypes = {
+  navigationData: PropTypes.shape({
+    back: PropTypes.func.isRequired,
+    next: PropTypes.func.isRequired
+  }).isRequired
 }
 
 Summary.propTypes = {
