@@ -9,7 +9,7 @@ import Checkboxes from '../Checkboxes'
 import IncomeAmount from '../IncomeAmount'
 import Tooltip from '../Tooltip'
 import { observer } from 'mobx-react'
-import { organization } from '../../../config'
+import { organization, apiConfig } from '../../../config'
 import { fullName } from '../../../helpers'
 import { tooltiptext } from '../../Tooltiptext'
 import { FormattedMessage } from 'react-intl'
@@ -26,7 +26,7 @@ class Summary extends Component {
     const { applicationData } = this.props;
     if (applicationData.certifiedCorrect) {
       const stringData = JSON.stringify(applicationData.cleaned)
-      const apiUrl = 'http://localhost:3005/submit'
+      const apiUrl = apiConfig.submissionEndpoint
 
       const options = {
         method: 'POST',

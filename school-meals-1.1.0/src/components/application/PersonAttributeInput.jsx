@@ -35,12 +35,16 @@ class PersonAttributeInput extends Component {
           </Checkboxes>
         </div>
       case PropTypes.array:
-        return <Select object={person} id={field.name} name={field.name} onChange={this.handleChange} value={selectValue}>
-          <option value="" selected disabled>{`${field.name}...`}</option>
-          {field.arrayValues.map((value, index) =>
-            <option key={index} value={value}> {value}</option>
-          )}
-        </Select>
+        return <div>
+          <br />
+          <label htmlFor={field.name}>{field.label}</label>
+          <Select object={person} id={field.name} name={field.name} onChange={this.handleChange} value={selectValue}>
+            <option value="" selected disabled>{`${field.name}...`}</option>
+            {field.arrayValues.map((value, index) =>
+              <option key={index} value={value}> {value}</option>
+            )}
+          </Select>
+        </div>
       default:
         return <InputField
             label={field.label}

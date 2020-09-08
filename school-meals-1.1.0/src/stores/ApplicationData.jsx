@@ -8,6 +8,7 @@ import { allStudentsAreFHMR,
          allStudentsAreFoster,
          applicableIncomeLineItems,
          formatDate } from '../helpers'
+import { schoolList } from '../config'
 
 export default class ApplicationData {
   students = new StudentCollection()
@@ -455,11 +456,13 @@ class StudentCollection extends ChildCollection {
     return super.fields.concat([
       { name: 'school',
         label:
-  <FormattedMessage
-      id="applicationData.student.school.label"
-      description="The label used for form fields."
-      defaultMessage="School"
-  />
+        <FormattedMessage
+          id="applicationData.student.school.label"
+          description="The label used for form fields."
+          defaultMessage="School"
+        />,
+        arrayValues: schoolList.schools,
+        dataType: PropTypes.array
       },
       { name: 'grade',
         label:
