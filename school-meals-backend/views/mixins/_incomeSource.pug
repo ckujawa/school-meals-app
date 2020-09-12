@@ -1,0 +1,12 @@
+mixin incomeSource(source)
+
+    .incomeSource
+        p <span class="label">Has:</span> #{source.has !== null ? source.has : false}
+        if source.lineItems.length > 0
+            h3 Details
+            ul
+                each val in source.lineItems
+                    li <span class="label">Amount:</span> #{val.amount}
+                    li <span class="label">Frequency:</span> #{val.frequency}
+                    li <span class="label">Hourly Hours:</span> #{val.hourlyHours}
+                    li <span class="label">Hourly Period:</span> #{val.hourlyPeriod}

@@ -1,0 +1,27 @@
+include _name
+include _incomeSource
+
+mixin child(child = {})
+    .child
+        +name(child.firstName, child.middleName, child.lastName, child.suffix)
+        p <span class="label">Is Child:</span> #{child.isChild}
+        
+        
+        p <span class="label">Is Foster:</span> #{child.isFoster !== null ? child.isFoster : false}
+        
+        .incomeInfo
+            h2 Child Income
+            
+            p <span class="label">Is Applicable:</span> #{child.incomeTypes.child.isApplicable !== null ? child.incomeTypes.child.isApplicable : false}
+
+            ul
+                li Job: 
+                    +incomeSource(child.incomeTypes.child.sources.job)
+                li Social Security:
+                    +incomeSource(child.incomeTypes.child.sources.socialSecurity)
+                li Friends and Family:
+                    +incomeSource(child.incomeTypes.child.sources.friendsFamily)
+                li Pension/Annuity/Trust:
+                    +incomeSource(child.incomeTypes.child.sources.pensionAnnuityTrust)
+                li Other:
+                    +incomeSource(child.incomeTypes.child.sources.other)

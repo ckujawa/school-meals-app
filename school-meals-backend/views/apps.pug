@@ -3,7 +3,9 @@ include mixins/_appCard
 
 block content
     .inner
-        h2= title
+        h2(class='title')= title
         .apps
-            each app in apps
-                +appCard(app)
+            <hr>
+            each app, index in apps
+                +appCard(app, index)
+                <hr>

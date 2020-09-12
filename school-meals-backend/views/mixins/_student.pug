@@ -1,0 +1,47 @@
+include _name
+include _incomeSource
+
+mixin student(student = {})
+    .student
+        +name(student.firstName, student.middleName, student.lastName, student.suffix)
+        p <span class="label">Is Child:</span> #{student.isChild}
+        
+        if student.isStudent
+            p.
+                <span class="label">Is Student:</span> #{student.isStudent} 
+                <span class="label">School:</span> #{student.school} 
+                <span class="label">Grade:</span> #{student.grade}
+        else
+            p.
+                <span class="label">Is Student:</span> #{student.isStudent !== null ? student.isStudent : false}
+        
+        p <span class="label">Is Foster:</span> #{student.isFoster !== null ? student.isFoster : false}
+        p <span class="label">Is Homeless:</span> #{student.isHomeless !== null ? student.isHomeless : false}
+        p <span class="label">Is Migrant:</span> #{student.isMigrant !== null ? student.isMigrant : false}
+        p <span class="label">Is Runaway:</span> #{student.isRunaway !== null ? student.isRunaway : false}
+
+        h2 Demographics
+        ul
+            li Native American: #{ student.demographics.isNativeAmerican !== null ? student.demographics.isNativeAmerican : false}
+            li Asian: #{ student.demographics.isAsian !== null ? student.demographics.isAsian : false}
+            li Black: #{ student.demographics.isBlack !== null ? student.demographics.isBlack : false}
+            li Pacific Islander: #{ student.demographics.isPacificIslander !== null ? student.demographics.isPacificIslander : false}
+            li Hispanic/Latino: #{ student.demographics.isHispanicLatino !== null ? student.demographics.isHispanicLatino : false}
+            li White: #{ student.demographics.isWhite !== null ? student.demographics.isWhite : false}
+        
+        .incomeInfo
+            h2 Student Income
+            
+            p <span class="label">Is Applicable:</span> #{student.incomeTypes.child.isApplicable !== null ? student.incomeTypes.child.isApplicable : false}
+
+            ul
+                li Job: 
+                    +incomeSource(student.incomeTypes.child.sources.job)
+                li Social Security:
+                    +incomeSource(student.incomeTypes.child.sources.socialSecurity)
+                li Friends and Family:
+                    +incomeSource(student.incomeTypes.child.sources.friendsFamily)
+                li Pension/Annuity/Trust:
+                    +incomeSource(student.incomeTypes.child.sources.pensionAnnuityTrust)
+                li Other:
+                    +incomeSource(student.incomeTypes.child.sources.other)

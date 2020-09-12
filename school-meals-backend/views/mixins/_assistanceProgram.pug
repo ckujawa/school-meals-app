@@ -1,0 +1,7 @@
+mixin assistanceProgram(program)
+
+    h3 #{program.name}
+    if program.isApplicable
+        p <span class="label">Case Number:</span> #{program.caseNumber}
+    else
+        p Applicant does not particapate in #{program.accronym}

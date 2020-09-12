@@ -1,0 +1,11 @@
+mixin name(firstName, middleName, lastName, suffix)
+
+    if middleName
+        p. 
+            <span class="label">First Name:</span> #{firstName} 
+            <span class="label">Middle Name:</span> #{middleName}
+            <span class="label">Last Name:</span> #{lastName} #{suffix}
+    else
+        p.
+            <span class="label">First Name:</span> #{firstName} 
+            <span class="label">Last Name:</span> #{lastName} #{suffix}

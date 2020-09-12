@@ -1,0 +1,111 @@
+include _incomeSource
+include _name
+
+mixin adult(adult)
+
+    .adult
+        +name(adult.firstName, adult.middleName, adult.lastName, adult.suffix)
+        p <span class="label">Is Adult:</span> #{adult.isAdult}
+        p <span class="label">Is Attestor:</span> #{adult.isAttestor}
+
+        .incomeInfo
+            h2 Income Information
+
+            ul
+                if adult.incomeTypes.military.isApplicable 
+                    li Military:
+                        | <br><span class="label">Is Applicable:</span> #{adult.incomeTypes.military.isApplicable !== null ? adult.incomeTypes.military.isApplicable : false}
+                        | <br><span class="label">Is Deployed:</span> #{adult.incomeTypes.military.isDeployed !== null ? adult.incomeTypes.military.isDeployed : false}
+                        h3 Basic:
+                        +incomeSource(adult.incomeTypes.military.sources.basic)
+                        h3 Cash Bonus:
+                        +incomeSource(adult.incomeTypes.military.sources.cashBonus)
+                        h3 Allowance:
+                        +incomeSource(adult.incomeTypes.military.sources.allowance)
+                else
+                    li Military:
+                        | <br> <span class="label">Is Applicable:</span> false
+                
+                if adult.incomeTypes.employment.isApplicable
+                    li Employment:
+                        | <br><span class="label">Is Applicable:</span> #{adult.incomeTypes.employment.isApplicable != null ? adult.incomeTypes.employment.isApplicable : false}
+                        h3 Salary/Wages:
+                        +incomeSource(adult.incomeTypes.employment.sources.salaryWages)
+                        h3 Tips:
+                        +incomeSource(adult.incomeTypes.employment.sources.tips)
+                        h3 Cash Bonus:
+                        +incomeSource(adult.incomeTypes.employment.sources.cashBonus)
+                        h3 Self Employment:
+                        +incomeSource(adult.incomeTypes.employment.sources.selfEmployment)
+                else
+                    li Employment:
+                        | <br><span class="label">Is Applicable:</span> #{adult.incomeTypes.employment.isApplicable != null ? adult.incomeTypes.employment.isApplicable : false}
+
+                if adult.incomeTypes.publicAssistance.isApplicable
+                    li Public Assistance:
+                        | <br><span class="label">Is Applicable:</span> #{adult.incomeTypes.publicAssistance.isApplicable !== null ? adult.incomeTypes.publicAssistance.isApplicable : false}
+                        h3 SSI:
+                        +incomeSource(adult.incomeTypes.publicaAssistance.sources.ssi)
+                        h3 State/Local:
+                        +incomeSource(adult.incomeTypes.publicAssistance.sources/stateLocal)
+                else
+                    li Public Assistance:
+                        | <br><span class="label">Is Applicable:</span> #{adult.incomeTypes.publicAssistance.isApplicable !== null ? adult.incomeTypes.publicAssistance.isApplicable : false}
+
+                if adult.incomeTypes.spousal.isApplicable
+                    li Spousal:
+                        | <br> <span class="label">Is Applicable:</span> #{adult.incomeTypes.spousal.isApplicable !== null ? adult.incomeTypes.spousal.isApplicable : false}
+                    h3 Alimony:
+                    +incomeSource(adult.incomeTypes.spousal.sources.alimony)
+                    h3 Child Support:
+                    +incomeSource(adult.incomeTypes.spousal.sources.childSupport)
+                else
+                    li Spousal:
+                        | <br> <span class="label">Is Applicable:</span> #{adult.incomeTypes.spousal.isApplicable !== null ? adult.incomeTypes.spousal.isApplicable : false}
+
+                if adult.incomeTypes.unemployment.isApplicable
+                    li Unemployment:
+                        | <br><span class="label">Is Applicable:</label> #{adult.incomeTypes.unemployment.isApplicable !== null ? adult.incomeTypes.unemployment.isApplicable : false}
+                    h3 Unemployment:
+                    +incomeSource(adult.incomeTypes.unemployment.sources.unemployment)
+                    h3 Workers Comp:
+                    +incomeSource(adult.incomeTypes.unemployment.sources.workersComp)
+                    h3 Strike:
+                    +incomeSource(adult.incomeTypes.unemployment.sources.strike)
+                    h3 SSDI:
+                    +incomeSource(adult.incomeTypes.unemployment.sources.ssdi)
+                    h3 Veteran:
+                    +incomeSource(adult.incomeTypes.unemployment.sources.veteran)
+                else
+                    li Unemployment:
+                        | <br><span class="label">Is Applicable:</span> #{adult.incomeTypes.unemployment.isApplicable !== null ? adult.incomeTypes.unemployment.isApplicable : false}
+
+                if adult.incomeTypes.retirement.isApplicable
+                    li Retirement:
+                        | <br><span class="label">Is Applicable:</span> #{adult.incomeTypes.retirement.isApplicable !== null ? adult.incomeTypes.retirement.isApplicable : false}
+                    h3 Social Security:
+                    +incomeSource(adult.incomeTypes.retirement.sources.socialSecurity)
+                    h3 Private Pension:
+                    +incomeSource(adult.incomeTypes.retirement.sources.privatePension)
+                else
+                    li Retirement:
+                        | <br><span class="label">Is Applicable:</span> #{adult.incomeTypes.retirement.isApplicable !== null ? adult.incomeTypes.retirement.isApplicable : false}
+                
+                if adult.incomeTypes.other.isApplicable
+                    li Other:
+                        | <br><span class="label">Is Applicable:</span> #{adult.incomeTypes.other.isApplicable !== null ? adult.incomeTypes.other.isApplicable : false}
+                    h3 Regular Cash Payments:
+                    +incomeSource(adult.incomeTypes.other.sources.regularCashPayments)
+                    h3 Rental Income:
+                    +incomeSource(adult.incomeTypes.other.sources.rentalIncome)
+                    h3 Earned Interest:
+                    +incomeSource(adult.incomeTypes.other.sources.earnedInterest)
+                    h3 Investment Income:
+                    +incomeSource(adult.incomeTypes.other.sources.investmentIncome)
+                    h3 Annuity:
+                    +incomeSource(adult.incomeTypes.other.sources.annuity)
+                    h3 Other:
+                    +incomeSource(adult.incomeTypes.other.sources.other)
+                else
+                    li Other:
+                        | <br><span class="label">Is Applicable:</span> #{adult.incomeTypes.other.isApplicable !== null ? adult.incomeTypes.other.isApplicable : false}

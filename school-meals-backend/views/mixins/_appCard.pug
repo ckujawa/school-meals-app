@@ -1,4 +1,51 @@
-mixin appCard(app = {})
+include _student
+include _adult
+include _child
+include _assistanceProgram
+
+mixin appCard(app, index)
+
     .app
-        each val, key in  app.field1
-            p  `#{key}: #{val}`
+        h4 Open application number #{index}
+        .adults
+            h2 Adults
+            each adult in app.field1.adults
+                +adult(adult)
+        .students
+            h2 Students
+            each student in app.field1.students
+                +student(student) 
+        
+        .children
+            if app.field1.otherChildren.length > 0
+                h2 Other Children
+                each child in app.field1.otherChildren
+                    +child(child)
+            else
+                p No other children were reported
+
+        .assistancePrograms
+            h2 Assistance Programs
+            each program in app.field1.assistancePrograms.items
+                +assistanceProgram(program)
+
+        .contactInfo
+            h2 Contact Information
+            p <span class="label">Phone:</span> #{app.field1.contact.phone}
+            p <span class="label">E-mail Address:</span> #{app.field1.contact.email}
+            p <span class="label">Address 1:</span> #{app.field1.contact.address1}
+            p <span class="label">Address 2:</span> #{app.field1.contact.address2}
+            p <span class="label">City:</span> #{app.field1.contact.city}
+            p <span class="label">State:</span> #{app.field1.contact.state}
+            p <span class="label">Zip Code:</span> #{app.field1.contact.zip}
+
+        .signature
+            h2 Certification Information
+            if app.field1.certifiedCorrect
+                p This application was certified correct on #{app.field1.attestation} by the adult marked as the attestor above.
+
+                if app.field1.signature.noSsn !== true
+                    p The attestors ssn ends in #{app.field1.signature.ssnLastFour}
+                else
+                    p The attestor does not have an SSN.
+        a(class='button' href=`/markProcessed/${app.id}`) Mark As Processed
