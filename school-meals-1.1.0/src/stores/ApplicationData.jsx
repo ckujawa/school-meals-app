@@ -3,12 +3,11 @@ import shortid from 'shortid'
 import { FormattedMessage } from 'react-intl'
 import { action, computed, observable } from 'mobx'
 import { assistancePrograms as assistanceProgramNames,
-         assistanceProgramsVarArray } from '../config'
+         assistanceProgramsVarArray, schoolList } from '../config'
 import { allStudentsAreFHMR,
          allStudentsAreFoster,
          applicableIncomeLineItems,
          formatDate } from '../helpers'
-import { schoolList } from '../config'
 
 export default class ApplicationData {
   students = new StudentCollection()
