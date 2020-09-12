@@ -1,0 +1,4 @@
+mixin appCard(app = {})
+    .app
+        each val, key in  app.field1
+            p  `#{key}: #{val}`
