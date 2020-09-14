@@ -6,7 +6,6 @@ include _assistanceProgram
 mixin appCard(app, index)
 
     .app
-        h4 Open application number #{index}
         .adults
             h2 Adults
             each adult in app.field1.adults
@@ -48,4 +47,7 @@ mixin appCard(app, index)
                     p The attestors ssn ends in #{app.field1.signature.ssnLastFour}
                 else
                     p The attestor does not have an SSN.
-        a(class='button' href=`/markProcessed/${app.id}`) Mark As Processed
+    |  
+    |  
+    |  
+    a(class='button' href=`/markProcessed/${app.id}`) Mark As Processed

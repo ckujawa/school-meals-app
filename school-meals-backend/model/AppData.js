@@ -3,7 +3,9 @@ var Schema = mongoose.Schema;
 
 const appDataSchema = new Schema({
     field1: Object,
-    status: {type: String, default: 'new'}
+    status: { type: String, default: 'new' },
+    created: Date,
+    processedDate: Date
     });
 
 module.exports = mongoose.model("AppData", appDataSchema);

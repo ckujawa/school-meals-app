@@ -5,7 +5,8 @@ exports.createAppData = (req, res) => {
     let reqData = req.body;
     let appData = new AppData({
         field1: reqData,
-        status: 'new'
+        status: 'new',
+        created: Date.now()
     });
     
     appData.save(err => {
@@ -32,15 +33,27 @@ exports.getNewAppData = async (req, res) => {
 }
 
 exports.getNewApps = async (req, res) => {
-    console.log('entering getNewApps...')
-    const apps = await AppData.find({ status: 'new' });
-    console.log(`found ${apps.length} apps...`)
-    const numOfApps = apps.length - 1;
+    const limit = 1;
 
-    // if (!apps.length) {
-    //     req.flash('info', `You asked for more applications than we currently have, so I'm sending you to the last one...`);
-    //     res.redirect(`/admin/apps/page/${numOfApps}`);
-    //     return;
-    // }
-    res.render('apps', {title: 'Applications for Processing', apps})
+    const apps = await AppData
+        .find({ status: 'new' })
+        .limit(limit);
+
+    if (apps.length === 0) {
+        res.render('noApps', {title: "Processing Complete"})
+    } else {
+        res.render('apps', {title: 'Applications for Processing', apps})
+    }   
+}
+
+exports.markProcessed = async (req, res) => {
+    const appId = req.params.appId;
+
+    if (!appId) {
+        res.status(500).send("Something went wrong when trying to update the status of your application...");
+    }
+
+    await AppData.findByIdAndUpdate(appId, { status: 'processed', processedDate: Date.now() });
+
+    res.redirect('/getNewApps')
 }
